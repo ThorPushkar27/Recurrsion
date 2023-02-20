@@ -1,0 +1,19 @@
+Using Recurssion 
+// Time Complexity = O(n)
+// Space Complexity = O(n)
+
+class Solution {
+public:
+    void reverseStringHelper(int l, int r, vector<char> &s){
+        if(l>=r) return ;
+        swap(s[l],s[r]);
+        
+        reverseStringHelper(l+1,r-1,s);
+        
+        
+    }
+    void reverseString(vector<char>& s) {
+        int n = s.size();
+        reverseStringHelper(0,n-1,s);
+    }
+};
