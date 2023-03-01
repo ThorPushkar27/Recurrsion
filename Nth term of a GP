@@ -1,0 +1,29 @@
+TC= O(logn)
+
+long long powHelper(int N, int mod, int R){
+    if(N==0){
+        return 1;
+    }
+    long long temp = powHelper(N/2,mod,R)%mod;
+    if(N%2==0){
+        return (temp*temp)%mod;
+    }
+    else{
+        return (((temp*temp)%mod)*R)%mod;
+    }
+
+
+}
+
+
+
+
+int nthTermOfGP(int N, int A, int R) {
+    int mod = 1000000007;
+    
+    long long ans=( A* powHelper(N-1,mod,R))%mod;
+    
+    return (int)ans;
+
+    
+}
