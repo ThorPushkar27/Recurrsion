@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+string removeDuplicate(string s)
+{
+    // Write your code here
+    int n = s.size();
+    if(n==0){
+        return s;
+    }
+    if(s[0]==s[1]){
+        int index =0;
+        while(s[index]==s[0] && index<n){
+            index++;
+        }
+        return s[0]+removeDuplicate(s.substr(index));
+    }
+    
+    return s[0]+removeDuplicate(s.substr(1));
+    
+}
