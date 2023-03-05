@@ -1,0 +1,31 @@
+SC = O(1)
+
+
+class Solution{
+public:
+    void insertlast(stack<int>&St, int k){
+        if(St.empty()){
+            St.push(k);
+            return;
+        }
+        int temp = St.top();
+        St.pop();
+        insertlast(St,k);
+        St.push(temp);
+        
+        
+    }
+    
+    
+    
+    void Reverse(stack<int> &St){
+        if(St.empty()== true){
+            return;
+        }
+        int temp =  St.top();
+        St.pop();
+        Reverse(St);
+        insertlast(St, temp);
+        
+    }
+};
